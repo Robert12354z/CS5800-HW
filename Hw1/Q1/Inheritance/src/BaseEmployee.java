@@ -17,7 +17,7 @@ public class BaseEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "BaseEmployee [baseSalary=" + baseSalary + "]";
+        return "BaseEmployee [" + super.toString() + ", baseSalary=" + baseSalary + "]";
     }
 
    

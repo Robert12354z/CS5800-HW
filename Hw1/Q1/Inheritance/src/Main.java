@@ -9,6 +9,15 @@ public class Main {
         BaseEmployee mike = new BaseEmployee("Mike", "Davenport", "666-66-6666", 95000);
         CommisionEmployee manhnaz = new CommisionEmployee("Manhaz", "Vaziri", "777-77-7777", 22, 40000);
 
+        System.out.println(joe);
+        System.out.println(steph);
+        System.out.println(mary);
+        System.out.println(nicole);
+        System.out.println(renwa);
+        System.out.println(mike);
+        System.out.println(manhnaz);
+        
+
          
     }
 }

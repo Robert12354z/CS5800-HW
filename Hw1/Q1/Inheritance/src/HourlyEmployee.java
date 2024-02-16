@@ -30,7 +30,7 @@ public class HourlyEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "HourlyEmployee [wage=" + wage + ", hoursWorked=" + hoursWorked + "]";
+        return "HourlyEmployee [" + super.toString() +", wage=" + wage + ", hoursWorked=" + hoursWorked + "]";
     }
 
 
