@@ -25,7 +25,7 @@ public class Ship {
 
     @Override
     public String toString() {
-        return "Ship [name=" + name + ", year=" + year + "]";
+        return "Name: " + name + ", year=" + year;
     }
 
 
