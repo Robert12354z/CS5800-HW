@@ -5,7 +5,7 @@ public class Folder {
     private String folderName;
     private ArrayList<File> files;
     private ArrayList<Folder> folders;
-
+    private String indent;
     
     
 
@@ -46,26 +46,57 @@ public class Folder {
     }
 
     public void printTree(){
-        System.out.println(this.folderName);
 
         if(this.folders.size() > 0 ){
-            System.out.println("/");
+            indent = " ";
+            System.out.println(indent + this.folderName);
             for(int i = 0; i<folders.size(); i++){
 
                 Folder f = folders.get(i);
 
+                indent = "  ";
+
+                System.out.println(indent+ f.getFolderName());            
+
                 if(f.getFolders().size() > 0){
-                    f.printTree();
-                }
-                else{
-                    System.out.println(f.getFolderName());
+                    for(int j = 0; j<f.getFolders().size(); j++ ){
+
+                        indent = "    ";
+
+                        System.out.println(indent + f.getFolders().get(j).getFolderName());
+
+                        if (f.getFolders().get(j).getFolders().size() > 0 ){
+
+                            for(int z = 0; z<f.getFolders().get(j).getFolders().size(); z++ ){
+                                indent = "      ";
+                                System.out.println(indent + f.getFolders().get(j).getFolders().get(z).getFolderName());
+                            }
+                            
+                            
+
+
+                        }
+
+                       
+                    }
                 }
 
-            }
+                if (f.getFiles().size() > 0) {
+                    for(int j =0; j<f.getFiles().size(); j++){
+
+                        indent = "    ";
+                        System.out.println(indent + f.getFiles().get(j).getFileName());
+
+                    }
+
+                }
+
         }
-
     }
+}
+}
+
         
     
     
-}
+

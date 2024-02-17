@@ -7,9 +7,10 @@ public class Main {
         Folder demo1 = new Folder(demoName);
 
         ArrayList<Folder> folderList = new ArrayList<Folder>();
+        ArrayList<File> filesList = new ArrayList<File>();
 
         demo1.setFolders(folderList);
-
+        demo1.setFiles(filesList);
         
         Scanner scan = new Scanner(System.in);
 
@@ -39,8 +40,10 @@ public class Main {
                     Folder folder1 = new Folder(folderName);
 
                     ArrayList<Folder> folderList2 = new ArrayList<Folder>();
+                    ArrayList<File> filesList2 = new ArrayList<File>();
 
                     folder1.setFolders(folderList2);
+                    folder1.setFiles(filesList2);
 
 
                     System.out.println("Where would you like to stick this folder? Name: ");
@@ -61,10 +64,18 @@ public class Main {
                                 folder2.addFolder(folder1);
 
                             }
+                            else{
+                                for(int j=0; j< folder2.getFolders().size(); j++){
+                                    Folder folder3 = folder2.getFolders().get(j);
+                                    if (folder3.getFolderName().equals(fileLocation) == true){
+                                        folder3.addFolder(folder1);
+                                }
+                            }
                         }
                         ch = 'A';
 
                     }
+                }
                     else{
                         break;
                     }
@@ -79,7 +90,17 @@ public class Main {
                     for(int i=0; i< demo1.getFolders().size(); i++){
                         Folder folder5 = demo1.getFolders().get(i);
                         if (folder5.getFolderName().equals(folderNameC)){
-                        demo1.getFolders().remove(folder5);
+                            demo1.getFolders().remove(folder5);
+                        }
+                        else{
+                            for(int j = 0; j < folder5.getFolders().size(); j++){
+
+                                Folder folder6 = folder5.getFolders().get(j);
+                                if (folder6.getFolderName().equals(folderNameC)){
+                                    folder5.getFolders().remove(folder6);
+                                }
+
+                            }
                         }
                     }
                     ch = 'A';
@@ -102,14 +123,17 @@ public class Main {
                     else if(fileLocation1 != demo1.getFolderName()){
                         for(int i=0; i< demo1.getFolders().size(); i++){
                             Folder folder2 = demo1.getFolders().get(i);
-                            if (folder2.getFolderName() == fileLocation1){
+                            if (folder2.getFolderName().equals(fileLocation1) == true){
                                 folder2.addFile(file1);
 
                             }
-                        }
+                            else{
+                               
+                            }
                         ch = 'A';
-
-                    }
+                            }
+                        }
+                    
                     else{
                         break;
                     }
