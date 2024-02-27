@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Folder{
+    __Private Data__
+        - String folderName
+        - ArrayList<File> files
+        - ArrayList<Folder> folders
+        - String indent
+    __Getter Methods__
+        + getFolderName()
+        + getFiles()
+        + getFolders()
+        + getIndent()
+    __Setter Methods__
+        + setFolderName()
+        + setFiles()
+        + setFolders()
+        + setIndent()
+    __Public Methods__
+        + addFile()
+        + addFolder()
+    __toString__
+        +toString()
+    }
+
+class File{
+    __Private Data__
+        - String fileName
+    __Getter Methods__
+        + getFileName()
+    __Setter Methods__
+        + setFileName()
+    __toString__
+        + toString()
+}
+
+Folder *-- File
+@enduml

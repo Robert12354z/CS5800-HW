@@ -1,0 +1,77 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title Part 1 Hw
+class   Employee {
+    __ private data __
+    -String firstName
+    -String lastName
+    -String socialSecurityNum
+    __ Simple Getter __
+    + getFirstName()
+    + getLastName()
+    + getSocialSecurityNum()
+    __ Simple Setter __
+    + setFirstName()
+    + setLastName()
+    + setSocialSecurityNum()
+    __ toString Method __
+    + toString()
+    }
+class   SalariedEmployee{
+    __ private data__
+    -int weeklySalary
+    __ Simple Getter __
+       + getWeeklySalary()
+    __ Simple Setter __
+       + setWeeklySalary()
+    __ toString Method __
+       + toString()
+    }
+class   HourlyEmployee{
+    __ private data__
+        -int wage
+        -int hoursWorked
+    __ Simple Getter __
+           + getWage()
+           + getHoursWorked()
+    __ Simple Setter __
+           + setWage()
+           + setHoursWorked()
+    __ toString Method __
+           + toString()
+    }
+class   CommissionEmployee{
+       __ private data__
+           - int commissionRate
+           - int grossSalary
+       __ Simple Getter __
+           + getCommissionRate()
+           + getGrossSalary()
+       __ Simple Setter __
+           + setCommissionRate()
+           + setGrossSalary()
+       __ toString Method __
+           + toString()
+    }
+class   BaseEmployee{
+    __ private data__
+        -int baseSalary
+    __ Simple Getter __
+           + getBaseSalary()
+    __ Simple Setter __
+           + setBaseSalary()
+    __ toString Method __
+           + toString()
+    }
+
+
+
+
+SalariedEmployee --|> Employee: Inherits Employee
+HourlyEmployee --|> Employee: Inherits Employee
+CommissionEmployee --|> Employee: Inherits Employee
+BaseEmployee --|> Employee: Inherits Employee
+
+
+@enduml

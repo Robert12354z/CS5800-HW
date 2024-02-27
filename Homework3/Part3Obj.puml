@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+title Part 3 Object
+object "<u>instr:Instructor</u>" as ts{
+    First Name:Nima
+    Last Name:Davarpanah
+    Office Num:3-2636
+}
+
+object "<u>textB:Textbook</u>" as tm{
+    Book Name: Clean Code
+    Author First Name: Robert
+    Author Last Name: Martin
+    Publisher: Prentice Hall
+}
+
+object "<u>cou:Course</u>" as tv{
+    course name = Advance Software Engineering
+}
+
+tv o-- tm
+tv o--ts
+
+@enduml

@@ -1,0 +1,69 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title Part 3 Class
+
+class Instructor{
+    __Private Data__
+        - String firstName
+        - String lastName
+        - String officeNum
+    __Getter Methods__
+        + getFirstName()
+        +getLastName()
+        +getOfficeNum()
+    __Setter Methods__
+        +setFirstName()
+        +setLastName()
+        +setOfficeNum()
+    __toString__
+        +toString()
+    }
+
+class Course{
+     __Private Data__
+        - String courseName
+        - Instructor instruct
+        - Instructor instruct2
+        - Textbook text
+        - Textbook text2
+     __Getter Methods__
+        +getCourseName()
+        +getInstruct()
+        +getInstruct2()
+        +getText()
+        +getText2()
+     __Setter Methods__
+        +setCourseName()
+        +setInstruct()
+        +setInstruct2()
+        +setText()
+        +setText2()
+     __toString__
+        +toString()
+    }
+
+class Textbook{
+    __Private Data__
+        - String bookName
+        - String authorFirstName
+        - String authorLastName
+        - String publisher
+    __Getter Methods__
+        + getBookName()
+        + getAuthorFirstName()
+        + getAuthorLastName()
+        + getPublisher()
+    __Setter Methods__
+        +setBookName()
+        +setAuthorFirstName()
+        +setAuthorLastName()
+        +setPublisher()
+    __toString__
+        + toString()
+    }
+
+Instructor --o Course
+Textbook --o Course
+
+@enduml

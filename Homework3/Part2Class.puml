@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title Part 2 Class
+
+class Ship{
+ __ private data __
+    -String name
+    -String year
+ __ Getter Methods __
+    +getName()
+    +getYear()
+ __ Setter Methods __
+    +setName()
+    +setYear()
+ __ toString Method __
+    + toString()
+    }
+
+class CruiseShip{
+ __ private data __
+    - int maxPassangers
+ __ Getter Methods __
+    + getMaxPassangers()
+ __ Setter Methods __
+    + setMaxPassangers()
+ __ toString __
+    + toString()
+    }
+
+class CargoShip{
+ __ private data __
+    - int cargoTonnage
+ __ Getter Methods __
+    + getCargoTonnage()
+ __ Setter Methods __
+    + setCargoTonnage()
+ __toString Method__
+    + toString()
+    }
+
+CargoShip  --|> Ship:Inherits Ship
+CruiseShip --|>Ship: Inherits Ship
+@enduml

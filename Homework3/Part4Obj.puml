@@ -1,0 +1,55 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title Part 4 Object
+
+object "<u>mainFolder:Folder</u>" as ts{
+    folderName: php_demo1
+}
+
+object "<u>subFolder:Folder</u>" as tv{
+    folderName: SourceFiles
+}
+
+object "<u>subFolder2:Folder</u>" as te{
+    folderName: Include Path
+}
+
+object "<u>subFolder3:Folder</u>" as tm{
+    folderName: Remote Files
+}
+
+object "<u>subFolder4:Folder</u>" as tz{
+    folderName: .phalcon
+}
+
+object "<u>subFolder5:Folder</u>" as tq{
+    folderName: cache
+}
+
+object "<u>subFolder6:Folder</u>" as tp{
+    folderName: public
+}
+
+object "<u>subFile1:File</u>" as ti{
+    folder name: .htaccess
+}
+object "<u>subFile2:File</u>" as tf{
+    folder name: .htrouter.php
+}
+
+object "<u>subFile3:File</u>" as th{
+    folder name: index.html
+}
+
+ts *-- tv
+ts *-- te
+ts *--tm
+tv *-- tz
+tv *--tq
+tv *-- tp
+tv *-- ti
+tv *-- tf
+tv *-- th
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+title Part 2 Object
+
+object "<u>ship1:Ship</u>" as ts{
+    name:Sunflower
+    year:2020
+}
+
+object "<u> may1:Ship</u>" as tm{
+    name:Mayflower
+    year:2013
+}
+
+object "<u> spir1:Ship</u>" as tn{
+    name:Spirit
+    year:2011
+}
+
+object "<u>may2:CruiseShip</u>" as tr{
+    maxPassengers:200
+}
+object "<u>spir2:CargoShip</u>" as tt{
+    cargoTonnage:5015
+}
+
+tn <|-- tt
+tm <|-- tr
+
+@enduml
