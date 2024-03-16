@@ -9,5 +9,16 @@ public class Customer {
         this.dP = dP;
     }
 
+    public String getName(){
+        return name; 
+    }
+
+    public Finalize finalizing(){
+        MacroFactory fact = MacroAbstract.getInstance().getFactory(dP);
+        Carbs carb = fact.generateCarbs();
+        Protein pro = fact.generateProtein();
+        Fats fat = fact.generateFats();
+        return new Finalize(carb, pro, fat);
+    }
     
 }

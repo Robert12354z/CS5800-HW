@@ -4,16 +4,16 @@ public class MacroAbstract {
 
     private static MacroAbstract instance;
 
-    private final MacroFactory NoRestrict;  
-    private final MacroFactory Paleo;
-    private final MacroFactory NutAllergy;
-    private final MacroFactory Vegan;
+    private final MacroFactory noRestrict;  
+    private final MacroFactory paleo;
+    private final MacroFactory nutAll;
+    private final MacroFactory vegan;
 
     private MacroAbstract(){
-        noRestrict = new NoRestrict();
-        paleo = new Paleo();
-        vegan = new Vegan();
-        nutAll = new NutAllergy();
+        this.noRestrict = new NoRestrict();
+        this.paleo = new Paleo();
+        this.vegan = new Vegan();
+        this.nutAll = new NutAllergy();
         
     }
 
@@ -26,8 +26,12 @@ public class MacroAbstract {
 
     public MacroFactory getFactory(DietPlan dietPlan){
         return switch (dietPlan){
-            
-        }
+            //NoRestrictions, Paleo, Vegan, NutAllergy
+            case NORESTRICT -> noRestrict;
+            case PALEO -> paleo;
+            case VEGAN -> vegan;
+            case NUTALL -> nutAll;
+        };
     }
 
 }

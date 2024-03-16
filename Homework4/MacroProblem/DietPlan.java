@@ -1,11 +1,7 @@
 package Homework4.MacroProblem;
 
-public class DietPlan {
+public enum DietPlan {
 
-    enum Level{
-
-        NoRestrictions, Paleo, Vegan, NutAllergy
-
-    }
+        NORESTRICT, PALEO, VEGAN, NUTALL
     
 }
