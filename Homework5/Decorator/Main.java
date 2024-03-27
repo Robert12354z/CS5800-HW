@@ -12,7 +12,11 @@ public class Main {
         burger = new Topping(burger, 3.0);
         System.out.println("Price after adding another topping: $" + burger.getPrice());
 
-        Order order = new Order();
+        CustomerLoyalty loyalty = new CustomerLoyalty(0.15,false);
+
+        System.out.println("Loyalty status: " + loyalty.getLoyal());
+        System.out.println("Loyalty discount: " + loyalty.getDiscount()*100 + "%");
+        Order order = new Order(loyalty);
         order.addFood(burger);
         System.out.println("Total price: $" + order.calculateTotal());
 
