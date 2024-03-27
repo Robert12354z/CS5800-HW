@@ -14,6 +14,7 @@ public class Order {
     public void addFood(Food food) {
         order.add(food);
     }
+    
 
     public double calculateTotal() {
         double total = 0.0;

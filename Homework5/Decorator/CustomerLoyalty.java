@@ -23,4 +23,8 @@ public class CustomerLoyalty {
         return loyal;
     }
 
+    public void setLoyal(Boolean loyal) {
+        this.loyal = loyal;
+    }
+
 }
