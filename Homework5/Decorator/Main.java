@@ -15,7 +15,7 @@ public class Main {
         burger = new Topping(burger, 3.0);
         System.out.println("Price after adding another topping: $" + burger.getPrice());
 
-        CustomerLoyalty loyalty = new CustomerLoyalty(0.15,false);
+        CustomerLoyalty loyalty = new CustomerLoyalty(0.15,true);
         
         
         //Order is a decorator
