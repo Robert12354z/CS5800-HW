@@ -1,8 +1,9 @@
 package Homework6.MementoMediator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class ChatHistory {
+public class ChatHistory implements IterableByUser.UserIterable{
     private ArrayList<Message> chatHistory;
     
     public ChatHistory(){
@@ -33,5 +34,18 @@ public class ChatHistory {
             System.out.println(message.getSender() + " sent a message to " + message.getReceivers() + " at " + 
             message.getTimestamp() + " with the following content: " + message.getMessage());
         }
+    }
+
+    public void clearHistory(){
+        this.chatHistory.clear();
+    }
+
+    public Iterator getMessageByUsIterator(User userToSearchWith){
+        return new searchMessagesByUser(this.chatHistory, userToSearchWith);
+    }
+
+    @Override
+    public Iterator iterator(User userToSearchWith) {
+        return new searchMessagesByUser(this.chatHistory, userToSearchWith);
     }
 }
