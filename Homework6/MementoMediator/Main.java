@@ -23,6 +23,8 @@ public class Main {
 
         user1.sendMessage(receivers, "Hello, Bob! Charlie can't see this message.");
 
+        server.getHistoryOfUser("Alice");
+
         server.undoLastMessage("Alice");
 
         server.getHistoryOfUser("Alice");

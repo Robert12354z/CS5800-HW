@@ -34,7 +34,6 @@ public class ChatTest {
         chatHistory.getLastMessage();
         chatHistory.removeLastMessage();
         chatHistory.getLastMessage();
-        
         chatHistory.getLastMessage();
     }
 
