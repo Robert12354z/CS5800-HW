@@ -6,12 +6,11 @@ import java.util.Map;
 
 public class ChatServer {
     private Map<String, User> users;
-    private Map<String, ChatHistory> chatHistories;
     private ArrayList<String> blockedUsers;
 
     public ChatServer(){
         this.users = new HashMap<>();
-        this.chatHistories = new HashMap<>();
+        this.blockedUsers = new ArrayList<>();
     }
 
     public void addUser(User user){
@@ -38,9 +37,21 @@ public class ChatServer {
         }
     }
 
+    public void undoLastMessage(String userName){
+        if (users.containsKey(userName)){
+            users.get(userName).undoLast();
+        }
+    }
+
     public void blockUser(String userName){
         if (users.containsKey(userName)){
             this.blockedUsers.add(userName);
+        }
+    }
+
+    public void getHistoryOfUser(String userName){
+        if (users.containsKey(userName)){
+            users.get(userName).getHistory();
         }
     }
 

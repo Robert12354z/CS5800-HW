@@ -19,27 +19,27 @@ public class User {
         return name;
     }
 
-    public ChatHistory getHistory() {
-        return history;
-    }
-
     public void sendMessage(ArrayList<String> receivers, String message) {
         Message newMessage = new Message(this.name, receivers, message);
-        this.server.sendMessage(newMessage);
+        this.server.sendMessage(this.name, newMessage); // Pass the name of the sender along with the message
         this.latestMessage = newMessage;
-        ChatHistory.addMessage(newMessage);
+        history.addMessage(newMessage);
     }
 
     public void receiveMessage(Message message) {
         this.latestMessage = message;
-        ChatHistory.addMessage(message);
+        history.addMessage(message);
     }
 
     public void undoLast(){
         if (latestMessage != null){
-            ChatHistory.removeLastMessage();
+            history.removeLastMessage();
             latestMessage = null;
         }
+    }
+
+    public void getHistory(){
+        history.printHistory();
     }
 
 }
