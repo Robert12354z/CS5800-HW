@@ -29,5 +29,9 @@ public class Song {
     public int getSongDuration() {
         return songDuration;
     }
+
+    public String toString() {
+        return "Song Name: " + songName + ", Artist Name: " + artistName + ", Album Name: " + albumName + ", Song Duration: " + songDuration;
+    }
     
 }
