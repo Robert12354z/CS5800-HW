@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CharacterFactory {
-    private Map<Character, Character> characters = new HashMap<>();
+    private Map<String, Character> characters = new HashMap<>();
     
     public Character getCharacter(char character, String font, String color, int size) {
         String key = String.valueOf(character) + font + color + size;
@@ -13,4 +13,5 @@ public class CharacterFactory {
         }
         return characters.get(key);
     
+    }
 }

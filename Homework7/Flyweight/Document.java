@@ -12,13 +12,20 @@ import java.util.List;
 public class Document {
 
     private List<Character> characters = new ArrayList<>();
+    private CharacterFactory characterFactory = null;
 
-    public Document(){
+
+    public Document(CharacterFactory characterFactory){
         this.characters = new ArrayList<>();
+        this.characterFactory = characterFactory;
     }
 
-    public void addCharacter(Character character){
-        characters.add(character);
+    public void addCharacter(char character, String font, String color, int size){
+        characters.add(this.characterFactory.getCharacter(character, font, color, size));
+    }
+
+    public List<Character> getCharacters(){
+        return characters;
     }
 
     public void save(String filename) throws IOException {
@@ -38,21 +45,34 @@ public class Document {
         file.close();
     }
 
-    public void load(String filename) throws IOException, ParseException {
+    public static Document load(String filename , CharacterFactory factory) throws IOException, ParseException {
+        Document doc = new Document(factory);
         JSONParser parser = new JSONParser();
+
+        try (FileReader reader = new FileReader(filename)) {
+            // Read and print the contents of the file
+            int data;
+            StringBuilder fileContent = new StringBuilder();
+            while ((data = reader.read()) != -1) {
+                fileContent.append((char) data);
+            }
+            System.out.println("File Content: " + fileContent.toString());
+
+        }
+
         FileReader file = new FileReader(filename);
         JSONObject obj = (JSONObject) parser.parse(file);
         JSONArray charArray = (JSONArray) obj.get("characters");
+
         for (Object o : charArray) {
             JSONObject charObj = (JSONObject) o;
-            Character character = new Character(
-                ((String) charObj.get("character")).charAt(0),
-                (String) charObj.get("font"),
-                (String) charObj.get("color"),
-                ((Long) charObj.get("size")).intValue()
-            );
-            characters.add(character);
+            char ch = ((String) charObj.get("character")).charAt(0);
+            String font = (String) charObj.get("font");
+            String color = (String) charObj.get("color");
+            int size = ((Long) charObj.get("size")).intValue();
+            doc.addCharacter(ch, font, color, size);
         }
+        return doc;
     }
     
 }
