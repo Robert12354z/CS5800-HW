@@ -7,13 +7,13 @@ public class Main {
         System.out.println(songService.searchById(2));
         System.out.println(songService.searchById(3));
 
-        System.out.println(songService.searchByTitle("Song1"));
-        System.out.println(songService.searchByTitle("Song2"));
-        System.out.println(songService.searchByTitle("Song3"));
+        System.out.println(songService.searchByTitle("Follow"));
+        System.out.println(songService.searchByTitle("Hello World"));
+        System.out.println(songService.searchByTitle("Test"));
 
-        System.out.println(songService.searchByAlbum("Album1"));
-        System.out.println(songService.searchByAlbum("Album2"));
-        System.out.println(songService.searchByAlbum("Album3"));
+        System.out.println(songService.searchByAlbum("Test"));
+        System.out.println(songService.searchByAlbum("Fame"));
+        System.out.println(songService.searchByAlbum("Blue"));
 
     }
 }
