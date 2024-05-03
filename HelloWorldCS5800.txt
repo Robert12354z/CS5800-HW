@@ -1,0 +1,16 @@
+H,Black,Arial,12
+E,Blue,Calibri,14
+L,Red,Verdana,15
+L,Black,Arial,12
+O,Red,Verdana,15
+W,Black,Arial,12
+O,Red,Verdana,15
+R,Pink,Times New Roman,11
+L,Red,Verdana,15
+D,Pink,Times New Roman,11
+C,Black,Arial,12
+S,Blue,Calibri,14
+5,Black,Arial,12
+8,Pink,Times New Roman,11
+0,Blue,Calibri,14
+0,Black,Arial,12

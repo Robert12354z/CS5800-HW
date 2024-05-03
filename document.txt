@@ -1,0 +1,16 @@
+H,Black,Arial,12
+E,Black,Arial,12
+L,Black,Arial,12
+L,Black,Arial,12
+O,Black,Arial,12
+W,Black,Arial,12
+O,Black,Arial,12
+R,Black,Arial,12
+L,Black,Arial,12
+D,Black,Arial,12
+C,Black,Arial,12
+S,Black,Arial,12
+5,Black,Arial,12
+8,Black,Arial,12
+0,Black,Arial,12
+0,Black,Arial,12
