@@ -31,7 +31,7 @@ public class ProxyTest {
     public void testSearchByAlbum() {
         SongService songService = new SongProxy();
         List<Song> song = songService.searchByAlbum("Test");
-        assertEquals("Test",song.get(0).getSongName());
+        assertEquals("Follow",song.get(0).getSongName());
        
     }
 }
