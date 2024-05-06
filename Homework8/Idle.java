@@ -25,4 +25,9 @@ public class Idle implements StateOfVendingMachine {
     public void dispenseSnack() {
         System.out.println("Please select a snack first.");
     }
+
+    @Override
+    public String toString() {
+        return "Idle";
+    }
 }

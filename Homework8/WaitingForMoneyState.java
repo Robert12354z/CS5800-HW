@@ -29,5 +29,10 @@ public class WaitingForMoneyState implements StateOfVendingMachine {
         System.out.println("Please insert money first.");
     }
 
+    @Override
+    public String toString() {
+        return "WaitingForMoneyState";
+    }
+
 
 }

@@ -25,12 +25,12 @@ public class VendingMachine {
     }
 
     public void intializeSnacks(){
-        snacks.put("Coke", new Snack("Coke", 1.5, 5));
-        snacks.put("Pepsi", new Snack("Pepsi", 1.75, 7));
-        snacks.put("Doritos", new Snack("Doritos", 1.25, 4));
-        snacks.put("Cheetos", new Snack("Cheetos", 1.00, 3));
-        snacks.put("Snickers", new Snack("Snickers", 1.50, 6));
-        snacks.put("KitKat", new Snack("KitKat", 1.25, 0));
+        snacks.put("coke", new Snack("Coke", 1.5, 5));
+        snacks.put("pepsi", new Snack("Pepsi", 1.75, 7));
+        snacks.put("doritos", new Snack("Doritos", 1.25, 4));
+        snacks.put("cheetos", new Snack("Cheetos", 1.00, 3));
+        snacks.put("snickers", new Snack("Snickers", 1.50, 6));
+        snacks.put("kitkat", new Snack("KitKat", 1.25, 0));
     }   
 
     public void insertMoney(double money){
@@ -44,7 +44,8 @@ public class VendingMachine {
     }
 
     public void selectSnack(String snack){
-        currentState.selectSnack(snack);
+        String snack1 = snack.toLowerCase();
+        currentState.selectSnack(snack1);
       
     }
 
@@ -82,6 +83,10 @@ public class VendingMachine {
 
     public void setSelectedSnack(String selectedSnack){
         this.selectedSnack = selectedSnack;
+    }
+
+    public StateOfVendingMachine getCurrentState(){
+        return this.currentState;
     }
 
 

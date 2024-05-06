@@ -38,5 +38,10 @@ public class DispenseSnackState implements StateOfVendingMachine {
         
     }
 
+    @Override
+    public String toString() {
+        return "DispenseSnackState";
+    }
+
 
 }
