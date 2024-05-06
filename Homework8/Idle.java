@@ -12,7 +12,7 @@ public class Idle implements StateOfVendingMachine {
     public void selectSnack(String snackName) {
         System.out.println("Snack selected: " + snackName);
         vendingMachine.setSelectedSnack(snackName);
-        vendingMachine.setCurrentState(vendingMachine.getWaitingForMoney());
+        vendingMachine.setCurrentState(vendingMachine.getWaitingForMoneyState());
 
     }
 

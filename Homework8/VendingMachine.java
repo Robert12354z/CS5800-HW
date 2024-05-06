@@ -1,49 +1,88 @@
 package Homework8;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class VendingMachine {
 
-    private StateOfVendingMachine state;
-    private double money;
-    private Snack snack;
+    private StateOfVendingMachine idleState;
+    private StateOfVendingMachine waitingForMoneyState;
+    private StateOfVendingMachine dispenseSnackState;
+    private StateOfVendingMachine currentState;
 
-    public VendingMachine() {
-        state = null;
+    private Map<String, Snack> snacks;
+
+    private String selectedSnack;
+    private double moneyInserted;
+
+    public VendingMachine(){
+        idleState = new Idle(this);
+        waitingForMoneyState = new WaitingForMoneyState(this);
+        dispenseSnackState = new DispenseSnackState(this);
+        currentState = idleState;
+        snacks = new HashMap<>();
+        intializeSnacks();
     }
 
-    public void setState(StateOfVendingMachine state) {
-        this.state = state;
+    public void intializeSnacks(){
+        snacks.put("Coke", new Snack("Coke", 1.5, 5));
+        snacks.put("Pepsi", new Snack("Pepsi", 1.75, 7));
+        snacks.put("Doritos", new Snack("Doritos", 1.25, 4));
+        snacks.put("Cheetos", new Snack("Cheetos", 1.00, 3));
+        snacks.put("Snickers", new Snack("Snickers", 1.50, 6));
+        snacks.put("KitKat", new Snack("KitKat", 1.25, 0));
+    }   
+
+    public void insertMoney(double money){
+        currentState.insertMoney(money);
+        System.out.println("Money inserted: " + money);
     }
 
-    public StateOfVendingMachine getState() {
-        return state;
+    public void cancel(){
+        currentState = idleState;
+        System.out.println("Transaction cancelled.");
     }
 
-    public void selectSnack(String snackName) {
-        state.selectSnack(snackName);
+    public void selectSnack(String snack){
+        currentState.selectSnack(snack);
+      
     }
 
-    public void insertMoney(double money) {
-        state.insertMoney(money);
+    public void dispenseSnack(){
+        currentState.dispenseSnack();
     }
 
-    public void dispenseSnack() {
-        state.dispenseSnack();
+    public void setCurrentState(StateOfVendingMachine state){
+        this.currentState = state;
     }
 
-    public void setMoney(double money) {
-        this.money = money;
+    public StateOfVendingMachine getIdleState(){
+        return idleState;
     }
 
-    public double getMoney() {
-        return money;
+    public StateOfVendingMachine getWaitingForMoneyState(){
+        return waitingForMoneyState;
     }
 
-    public void setSnack(Snack snack) {
-        this.snack = snack;
+    public StateOfVendingMachine getDispenseSnackState(){
+        return dispenseSnackState;
     }
 
-    public Snack getSnack() {
-        return snack;
+    public double getMoneyInserted(){
+        return moneyInserted;
     }
-    
+
+    public void setMoneyInserted(double moneyInserted){
+        this.moneyInserted = moneyInserted;
+    }
+
+    public Snack getSelectedSnack(){
+        return snacks.get(selectedSnack);
+    }
+
+    public void setSelectedSnack(String selectedSnack){
+        this.selectedSnack = selectedSnack;
+    }
+
+
 }
